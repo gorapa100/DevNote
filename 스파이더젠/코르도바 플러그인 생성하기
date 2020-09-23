@@ -97,7 +97,12 @@ config.xml
 
 
 
+클라이언트에서 호출 방법
 
+cordova.exec( function(result)
+    {
+        alert(result);
+    }, null, "SpidergenPlugin", "coolMethod", ["음하하하하하!!!!"]);
 
 
 
