@@ -1,0 +1,61 @@
+1. 코르도바 플러그인을 생성하기 위해 plugman 을 설치합니다.
+npm install -g plugman
+
+2. 앞에서 생성한 코르도바 프로젝트 폴더로 이동합니다. 
+cd TestApp
+D:\Cordova\TestApp
+
+3. 새로운 코르도바 플러그인을 생성합니다. 
+D:\Cordova\TestApp> plugman create -name SpidergenPlugin -plugin_id spidergenPlugin -plugin_version 0.0.1
+
+4. 위와 같이 하면 프로젝트 폴더내 플러그인 폴더가 생성 됩니다. 생성된 플러그인 폴더로 이동합니다. 
+D:\Cordova\TestApp> cd SpidergenPlugin
+D:\Cordova\TestApp\SpidergenPlugin>
+
+5. 플러그인에 플렛폼을 추가합니다. 
+D:\Cordova\TestApp\SpidergenPlugin> plugman platform add -platform_name android
+
+6. 플러그인 패키지정보를 생성할 수 있습니다. 
+D:\Cordova\TestApp\SpidergenPlugin> plugman createpackagejson ./ name:SpidergenPlugin
+
+7. 생성한 플러그인을 추가할 코르도바 프로젝트 폴더로 이동합니다.
+D:\Cordova\TestApp\SpidergenPlugin> cd..
+
+8. 이동한 폴더에서 생성한 플러그인을 추가 합니다.
+D:\Cordova\TestApp> cordova plugin add SpidergenPlugin
+
+9. 안드로이드스튜디오에서 프로젝트를 확인해봅니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
