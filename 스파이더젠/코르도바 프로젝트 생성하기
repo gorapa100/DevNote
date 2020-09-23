@@ -1,0 +1,19 @@
+
+코르도바 플러그인 생성하는 방법
+
+1. 먼저 Nodejs를 설치합니다. 
+
+2. 코르도바를 설치합니다.
+npm install -g cordova
+
+3. 프로젝트를 생성합니다. 
+//Syntax
+//cordova create path [id [name [config]]] [options]
+cordova create TestApp com.asoosoft.app.testApp TestApp
+>> Creating a new cordova project.
+
+4. 생성된 프로젝트 폴더로 이동 합니다.
+cd TestApp
+
+5. 플렛폼을 추가합니다.
+platform add android
