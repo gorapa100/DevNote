@@ -26,6 +26,72 @@ D:\Cordova\TestApp> cordova plugin add SpidergenPlugin
 
 9. 안드로이드스튜디오에서 프로젝트를 확인해봅니다.
 
+SpidergenPlugin.java
+
+package spidergenPlugin;
+
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/**
+ * This class echoes a string called from JavaScript.
+ */
+public class SpidergenPlugin extends CordovaPlugin {
+
+    @Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        if (action.equals("coolMethod")) {
+            String message = args.getString(0);
+            this.coolMethod(message, callbackContext);
+            return true;
+        }
+        return false;
+    }
+
+    private void coolMethod(String message, CallbackContext callbackContext) {
+        if (message != null && message.length() > 0) {
+            callbackContext.success(message);
+        } else {
+            callbackContext.error("Expected one non-empty string argument.");
+        }
+    }
+}
+
+
+
+
+config.xml
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.asoosoft.app.testApp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>TestApp</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="SpidergenPlugin">
+        <param name="android-package" value="spidergenPlugin.SpidergenPlugin" />
+    </feature>
+</widget>
 
 
 
